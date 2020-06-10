@@ -1,3 +1,4 @@
 bin
 river.toml
 main
+/var/master.info
