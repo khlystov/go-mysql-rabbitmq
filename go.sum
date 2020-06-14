@@ -1,5 +1,3 @@
-bitbucket.org/salaryboardteama/demand-service v0.0.0-20200517183713-a069a4c543c0 h1:FG5Tl/fOm+ogF/C87qO2T+X2EHkA0Wk5PlN65WIUj8U=
-bitbucket.org/salaryboardteama/demand-service v0.0.0-20200517183713-a069a4c543c0/go.mod h1:POApEI/7obTddpmgfPlZK8gvSew488EuZuE1DYPBkuM=
 cloud.google.com/go v0.26.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMTw=
 github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
