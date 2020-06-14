@@ -3,7 +3,6 @@ module github.com/khlystov/go-mysql-rabbitmq
 go 1.12
 
 require (
-	bitbucket.org/salaryboardteama/demand-service v0.0.0-20200517183713-a069a4c543c0 // indirect
 	github.com/BurntSushi/toml v0.3.1
 	github.com/juju/errors v0.0.0-20190207033735-e65537c515d7
 	github.com/juju/testing v0.0.0-20200510222523-6c8c298c77a0 // indirect
