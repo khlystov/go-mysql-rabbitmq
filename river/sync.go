@@ -89,9 +89,6 @@ func (h *eventHandler) OnRow(e *canal.RowsEvent) error {
 		return errors.Errorf("make %s request err %v, close sync", e.Action, err)
 	}
 
-	for _, i := range reqs {
-		fmt.Printf("%+v\n", *i)
-	}
 	body, _ := json.Marshal(reqs)
 
 	err = h.r.amqpCh.Publish(
