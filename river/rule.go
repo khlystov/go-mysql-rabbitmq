@@ -11,12 +11,13 @@ import (
 // The mapping rule may thi: schema + table <-> index + document type.
 // schema and table is for MySQL, index and document type is for RabbitMQ.
 type Rule struct {
-	Schema string   `toml:"schema"`
-	Table  string   `toml:"table"`
-	Index  string   `toml:"index"`
-	Type   string   `toml:"type"`
-	Parent string   `toml:"parent"`
-	ID     []string `toml:"id"`
+	Exchange string   `toml:"exchange"`
+	Schema   string   `toml:"schema"`
+	Table    string   `toml:"table"`
+	Index    string   `toml:"index"`
+	Type     string   `toml:"type"`
+	Parent   string   `toml:"parent"`
+	ID       []string `toml:"id"`
 
 	// Default, a MySQL table field name is mapped to RabbitMQ field name.
 	// Sometimes, you want to use different name, e.g, the MySQL file name is title,

@@ -92,7 +92,7 @@ func (h *eventHandler) OnRow(e *canal.RowsEvent) error {
 	body, _ := json.Marshal(reqs)
 
 	err = h.r.amqpCh.Publish(
-		"",
+		rule.Exchange,
 		rule.Index,
 		false,
 		false,
