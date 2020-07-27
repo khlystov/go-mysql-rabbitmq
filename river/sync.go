@@ -244,13 +244,20 @@ func (r *River) makeUpdateRequest(rule *Rule, rows [][]interface{}) ([]*rabbitmq
 			}
 		}
 
-		req := &rabbitmq.BulkRequest{Index: rule.Index, Type: rule.Type, ID: beforeID, Parent: beforeParentID}
+		req := &rabbitmq.BulkRequest{
+			Action: rabbitmq.ActionUpdate,
+			Index:  rule.Index,
+			Type:   rule.Type,
+			ID:     beforeID,
+			Parent: beforeParentID,
+		}
 
 		if beforeID != afterID || beforeParentID != afterParentID {
 			req.Action = rabbitmq.ActionDelete
 			reqs = append(reqs, req)
 
 			req = &rabbitmq.BulkRequest{
+				Action: rabbitmq.ActionUpdate,
 				Index:  rule.Index,
 				Type:   rule.Type,
 				ID:     afterID,
