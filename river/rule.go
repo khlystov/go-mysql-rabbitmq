@@ -11,6 +11,7 @@ import (
 // The mapping rule may thi: schema + table <-> index + document type.
 // schema and table is for MySQL, index and document type is for RabbitMQ.
 type Rule struct {
+	DedupKey string   `toml:"deduplication_key"`
 	Exchange string   `toml:"exchange"`
 	Schema   string   `toml:"schema"`
 	Table    string   `toml:"table"`

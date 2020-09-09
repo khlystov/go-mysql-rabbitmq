@@ -89,24 +89,51 @@ func (h *eventHandler) OnRow(e *canal.RowsEvent) error {
 		return errors.Errorf("make %s request err %v, close sync", e.Action, err)
 	}
 
-	body, _ := json.Marshal(reqs)
+	if rule.DedupKey == "" {
+		body, _ := json.Marshal(reqs)
 
-	err = h.r.amqpCh.Publish(
-		rule.Exchange,
-		rule.Index,
-		false,
-		false,
-		amqp.Publishing{
-			DeliveryMode: amqp.Persistent,
-			ContentType:  "application/json",
-			Body:         []byte(body),
-		})
+		err = h.r.amqpCh.Publish(
+			rule.Exchange,
+			rule.Index,
+			false,
+			false,
+			amqp.Publishing{
+				DeliveryMode: amqp.Persistent,
+				ContentType:  "application/json",
+				Body:         []byte(body),
+			})
 
-	if err != nil {
-		log.Printf(" [x] Sent %s", err)
+		if err != nil {
+			log.Panicf(" [x] Sent %s", err)
+		}
+	} else {
+		for _, val := range reqs {
+			headers := amqp.Table{}
+			body, _ := json.Marshal([]*rabbitmq.BulkRequest{val})
+
+			if e.Action == canal.InsertAction || e.Action == canal.UpdateAction {
+				if dedupKey, ok := val.Data[rule.DedupKey]; ok {
+					headers["x-deduplication-header"] = dedupKey
+				}
+			}
+
+			err = h.r.amqpCh.Publish(
+				rule.Exchange,
+				rule.Index,
+				false,
+				false,
+				amqp.Publishing{
+					Headers:      headers,
+					DeliveryMode: amqp.Persistent,
+					ContentType:  "application/json",
+					Body:         []byte(body),
+				})
+
+			if err != nil {
+				log.Panicf(" [x] Sent %s", err)
+			}
+		}
 	}
-
-	log.Println("Published...")
 
 	return h.r.ctx.Err()
 }
