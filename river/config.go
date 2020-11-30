@@ -21,9 +21,7 @@ type Config struct {
 	MyPassword string `toml:"my_pass"`
 	MyCharset  string `toml:"my_charset"`
 
-	RabbitMQHost string `toml:"rabbitmq_host"`
-	RabbitMQUser string `toml:"rabbitmq_user"`
-	RabbitMQPass string `toml:"rabbitmq_pass"`
+	AmqpURL string `toml:"amqp_url"`
 
 	StatAddr string `toml:"stat_addr"`
 	StatPath string `toml:"stat_path"`

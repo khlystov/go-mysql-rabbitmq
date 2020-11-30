@@ -8,8 +8,8 @@ import (
 	"sync"
 
 	"github.com/juju/errors"
-	"github.com/siddontang/go-log/log"
 	"github.com/khlystov/go-mysql-rabbitmq/rabbitmq"
+	"github.com/siddontang/go-log/log"
 	"github.com/siddontang/go-mysql/canal"
 	"github.com/streadway/amqp"
 )
@@ -70,9 +70,7 @@ func NewRiver(c *Config) (*River, error) {
 
 	cfg := new(rabbitmq.ClientConfig)
 
-	cfg.User = r.c.RabbitMQUser
-	cfg.Password = r.c.RabbitMQPass
-	cfg.Host = r.c.RabbitMQHost
+	cfg.AmqpURL = r.c.AmqpURL
 	r.amqpCh = rabbitmq.NewChannel(cfg)
 
 	go InitStatus(r.c.StatAddr, r.c.StatPath)

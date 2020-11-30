@@ -1,7 +1,6 @@
 package rabbitmq
 
 import (
-	"fmt"
 	"log"
 
 	"github.com/streadway/amqp"
@@ -14,22 +13,14 @@ const (
 	ActionIndex  = "index"
 )
 
-const (
-	connPattern = "amqp://%s:%s@%s/"
-)
-
 // ClientConfig is the configuration for the client.
 type ClientConfig struct {
-	Host     string
-	User     string
-	Password string
+	AmqpURL string
 }
 
 // NewClient creates the Cient with configuration.
 func NewChannel(conf *ClientConfig) *amqp.Channel {
-	conn, err := amqp.Dial(
-		fmt.Sprintf(connPattern, conf.User, conf.Password, conf.Host),
-	)
+	conn, err := amqp.Dial(conf.AmqpURL)
 
 	if err != nil {
 		log.Fatalf("%s: %s", "Failed to connect to RabbitMQ", err)
