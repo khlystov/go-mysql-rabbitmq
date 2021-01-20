@@ -119,7 +119,7 @@ func (h *eventHandler) OnRow(e *canal.RowsEvent) error {
 
 			err = h.r.amqpCh.Publish(
 				rule.Exchange,
-				rule.Index,
+				val.Action,
 				false,
 				false,
 				amqp.Publishing{

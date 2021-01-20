@@ -1,0 +1,79 @@
+# github.com/BurntSushi/toml v0.3.1
+github.com/BurntSushi/toml
+# github.com/beorn7/perks v1.0.0
+github.com/beorn7/perks/quantile
+# github.com/golang/protobuf v1.3.1
+github.com/golang/protobuf/proto
+# github.com/juju/errors v0.0.0-20190207033735-e65537c515d7
+github.com/juju/errors
+# github.com/konsorten/go-windows-terminal-sequences v1.0.1
+github.com/konsorten/go-windows-terminal-sequences
+# github.com/matttproud/golang_protobuf_extensions v1.0.1
+github.com/matttproud/golang_protobuf_extensions/pbutil
+# github.com/pingcap/errors v0.11.0
+github.com/pingcap/errors
+# github.com/pingcap/parser v0.0.0-20190506092653-e336082eb825
+github.com/pingcap/parser
+github.com/pingcap/parser/ast
+github.com/pingcap/parser/auth
+github.com/pingcap/parser/charset
+github.com/pingcap/parser/format
+github.com/pingcap/parser/model
+github.com/pingcap/parser/mysql
+github.com/pingcap/parser/opcode
+github.com/pingcap/parser/terror
+github.com/pingcap/parser/types
+# github.com/pingcap/tipb v0.0.0-20190428032612-535e1abaa330
+github.com/pingcap/tipb/go-tipb
+github.com/pingcap/tipb/sharedbytes
+# github.com/prometheus/client_golang v0.9.3
+github.com/prometheus/client_golang/prometheus
+github.com/prometheus/client_golang/prometheus/internal
+github.com/prometheus/client_golang/prometheus/promauto
+github.com/prometheus/client_golang/prometheus/promhttp
+# github.com/prometheus/client_model v0.0.0-20190129233127-fd36f4220a90
+github.com/prometheus/client_model/go
+# github.com/prometheus/common v0.4.0
+github.com/prometheus/common/expfmt
+github.com/prometheus/common/internal/bitbucket.org/ww/goautoneg
+github.com/prometheus/common/model
+# github.com/prometheus/procfs v0.0.0-20190507164030-5867b95ac084
+github.com/prometheus/procfs
+github.com/prometheus/procfs/internal/fs
+# github.com/satori/go.uuid v1.2.0
+github.com/satori/go.uuid
+# github.com/shopspring/decimal v0.0.0-20180709203117-cd690d0c9e24
+github.com/shopspring/decimal
+# github.com/siddontang/go v0.0.0-20180604090527-bdc77568d726
+github.com/siddontang/go/hack
+github.com/siddontang/go/ioutil2
+# github.com/siddontang/go-log v0.0.0-20190221022429-1e957dd83bed
+github.com/siddontang/go-log/log
+github.com/siddontang/go-log/loggers
+# github.com/siddontang/go-mysql v0.0.0-20200424072754-803944a6e4ea
+github.com/siddontang/go-mysql/canal
+github.com/siddontang/go-mysql/client
+github.com/siddontang/go-mysql/dump
+github.com/siddontang/go-mysql/mysql
+github.com/siddontang/go-mysql/packet
+github.com/siddontang/go-mysql/replication
+github.com/siddontang/go-mysql/schema
+# github.com/sirupsen/logrus v1.4.1
+github.com/sirupsen/logrus
+# github.com/streadway/amqp v0.0.0-20200108173154-1c71cc93ed71
+github.com/streadway/amqp
+# golang.org/x/sys v0.0.0-20181116152217-5ac8a444bdc5
+golang.org/x/sys/unix
+# golang.org/x/text v0.3.2
+golang.org/x/text/encoding
+golang.org/x/text/encoding/charmap
+golang.org/x/text/encoding/internal
+golang.org/x/text/encoding/internal/identifier
+golang.org/x/text/encoding/japanese
+golang.org/x/text/encoding/korean
+golang.org/x/text/encoding/simplifiedchinese
+golang.org/x/text/encoding/traditionalchinese
+golang.org/x/text/encoding/unicode
+golang.org/x/text/internal/utf8internal
+golang.org/x/text/runes
+golang.org/x/text/transform
