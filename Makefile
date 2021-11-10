@@ -10,4 +10,4 @@ run:
 	./bin/run.sh
 
 stop:
-	./bin/stop.sh
+	./bin/stop.sh    
